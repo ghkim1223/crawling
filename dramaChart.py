@@ -12,5 +12,5 @@ dramList = crawling.crawling(datetime.today() - relativedelta(days=1), url)
 #     print(drama)
 sortList = distribute.distribute(dramList)
 for sort in sortList:
-    print(sort, sort.__len__())
+    print(sort, len(sort))
 
