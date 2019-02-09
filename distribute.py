@@ -2,9 +2,12 @@ import re
 
 
 def distribute(dramList):
-    sortList = {'기묘한 이야기':[], '킹덤':[], '나르코스':[]}
+    sortList = {}
+    sortList['기묘한 이야기'] = []
     p1 = re.compile('기묘한[\s|\S]*이야기')
+    sortList['킹덤'] = []
     p2 = re.compile('킹덤[\s|\S]*')
+    sortList['나르코스'] = []
     p3 = re.compile('나르코스[\s|\S]*')
     for drama in dramList:
         if p1.findall(drama):
