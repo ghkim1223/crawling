@@ -12,8 +12,8 @@ def distribute(dramList):
     for drama in dramList:
         if p1.findall(drama):
             sortList['기묘한 이야기'].append(drama)
-        elif p2.findall(drama):
+        if p2.findall(drama):
             sortList['킹덤'].append(drama)
-        elif p3.findall(drama):
+        if p3.findall(drama):
             sortList['나르코스'].append(drama)
     return sortList
