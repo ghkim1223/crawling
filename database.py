@@ -11,3 +11,12 @@ def insertDramaDaily(dramaDailyList):
 
 def selectDramaDaily(year, month, day):
     return dramaDaily.find({'year':year, 'month':month, 'day':day})
+
+def getDramaCount(name):
+    count = 0
+    for r in dramaDaily.find({'name':name}):
+        count += r['count']
+    return name, count
+
+for drama in map(getDramaCount, ['기묘한 이야기', '킹덤', '나르코스', '바이킹스']):
+    print(drama)
