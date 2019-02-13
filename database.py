@@ -11,4 +11,3 @@ def insertDramaDaily(dramaDailyList):
 
 def selectDramaDaily(year, month, day):
     return dramaDaily.find({'year':year, 'month':month, 'day':day})
-
