@@ -5,10 +5,10 @@ import distribute
 import database
 
 url = 'http://gall.dcinside.com/board/lists?id=f_drama&page='
-date = datetime(2019,2,6)
-# date = datetime.today() - relativedelta(days=1)
+# date = datetime(2019,2,14)
+date = datetime.today() - relativedelta(days=1)
 dramaList = crawling.crawling(date, url)
-# for drama in dramList:
+# for drama in dramaList:
 #     print(drama)
 sortList = distribute.distribute(dramaList)
 dramaDailyList = []

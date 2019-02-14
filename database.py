@@ -3,6 +3,7 @@ from pymongo import MongoClient
 client = MongoClient('mongodb://admin1:admin1@ds133275.mlab.com:33275/movieproj')
 db = client.movieproj
 dramaDaily = db.dramaDaily
+dramaInfo = db.dramaInfo
 
 
 def insertDramaDaily(dramaDailyList):
@@ -16,6 +17,12 @@ def getDramaCount(name):
     return name, count
 
 
-for drama in map(getDramaCount, ['기묘한 이야기', '킹덤', '나르코스', '바이킹스']):
-    print(drama)
+def getDramaInfo():
+    return dramaInfo.find()
+
+# dramaName = []
+# for dramaInfo in getDramaInfo():
+#     dramaName.append(dramaInfo['name'])
+# for drama in map(getDramaCount, dramaName):
+#     print(drama)
 
