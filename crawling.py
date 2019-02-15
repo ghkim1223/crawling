@@ -26,3 +26,15 @@ def crawling(date, url):
                 today = False
                 break
     return dramaList
+
+
+def urlCrawler(dramaInfo):
+    url = 'https://search.naver.com/search.naver?sm=top_hty&fbm=1&ie=utf8&query='
+    html = requests.get(url + dramaInfo['name']).text
+    soup = BeautifulSoup(html, 'html.parser')
+    crawl = soup.find('div', {'id':'nhn.dss.x09Base.brcs_main_video'})
+    dramaInfo['url'] = crawl.find('img')['src']
+    return dramaInfo
+
+
+# urlCrawler({'name':'고담'})

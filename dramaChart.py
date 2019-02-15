@@ -15,6 +15,6 @@ dramaDailyList = []
 year, month, day = date.year, date.month, date.day
 for sort in sortList.items():
     dramaDailyList.append({'name':sort[0], 'count':len(sort[1]), 'year':year, 'month':month, 'day':day})
-database.insertDramaDaily(dramaDailyList)
+# database.insertDramaDaily(dramaDailyList)
 print(date)
 

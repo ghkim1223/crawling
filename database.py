@@ -1,4 +1,5 @@
 from pymongo import MongoClient
+import crawling
 
 client = MongoClient('mongodb://admin1:admin1@ds133275.mlab.com:33275/movieproj')
 db = client.movieproj
@@ -22,7 +23,13 @@ def getDramaInfo():
 
 # dramaName = []
 # for dramaInfo in getDramaInfo():
-#     dramaName.append(dramaInfo['name'])
+#     dramaName.append(dramaInfo['name'])x
 # for drama in map(getDramaCount, dramaName):
 #     print(drama)
 
+def updateDramaInfo(dramaInfoList):
+    for drama in dramaInfoList:
+        dramaInfo.update({'name':drama['name']},{'$set':{'url':drama['url']}})
+
+# dramaInfoList = getDramaInfo()
+# updateDramaInfo(map(crawling.urlCrawler, dramaInfoList))
